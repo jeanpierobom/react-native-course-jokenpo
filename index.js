@@ -1,8 +1,28 @@
 import React, { Component } from 'react';
 import { AppRegistry, Text, View, Button, StyleSheet } from 'react-native';
-import Topo from './src/components/topo.js';
-import Icone from './src/components/icone.js';
-//import App from './App';
+import Topo from './src/components/topo';
+import Icone from './src/components/icone';
+
+const styles = StyleSheet.create({
+  btnEscolha: {
+
+  },
+  painelAcoes: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+  },
+  palco: {
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  txtResultado: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: 'red',
+    height: 60,
+  },
+});
 
 class jokenpogame extends Component {
 
@@ -11,7 +31,7 @@ class jokenpogame extends Component {
     this.state = {
       escolhaUsuario: '',
       escolhaComputador: '',
-      resultado: ''
+      resultado: '',
     };
   }
 
@@ -58,7 +78,7 @@ class jokenpogame extends Component {
     this.setState({
       escolhaUsuario,
       escolhaComputador,
-      resultado
+      resultado,
     });
   }
 
@@ -89,39 +109,14 @@ class jokenpogame extends Component {
             />
           </View>
         </View>
-
         <View style={styles.palco}>
           <Text style={styles.txtResultado}>{this.state.resultado}</Text>
-
           <Icone escolha={this.state.escolhaUsuario} jogador="Você" />
           <Icone escolha={this.state.escolhaComputador} jogador="Computador" />
-
         </View>
-
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  btnEscolha: {
-    //width: 90
-  },
-  painelAcoes: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 10
-  },
-  palco: {
-    alignItems: 'center',
-    marginTop: 10
-  },
-  txtResultado: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    color: 'red',
-    height: 60
-  }
-});
 
 AppRegistry.registerComponent('jokenpogame', () => jokenpogame);

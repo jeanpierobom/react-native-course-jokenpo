@@ -5,6 +5,16 @@ const pedraImagem = require('../../images/pedra.png');
 const papelImagem = require('../../images/papel.png');
 const tesouraImagem = require('../../images/tesoura.png');
 
+const styles = StyleSheet.create({
+  icone: {
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  txtJogador: {
+    fontSize: 18,
+  },
+});
+
 class Icone extends Component {
   render() {
     if (this.props.escolha === 'pedra') {
@@ -33,16 +43,5 @@ class Icone extends Component {
     return false;
   }
 }
-
-const styles = StyleSheet.create({
-
-  icone: {
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  txtJogador: {
-    fontSize: 18
-  }
-});
 
 export default Icone;
